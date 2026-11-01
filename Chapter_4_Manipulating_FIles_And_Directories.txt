@@ -1,0 +1,44 @@
+Chapter-4 Manipulating Files And Directories 
+
+- cp - Copy files and directories 
+- mv - Move/rename files and directories 
+- mkdir - Create directories 
+- rm - Remove files and directories 
+- ln - Create hard and symbolic links 
+- mkdir dir1 dir2 dir3 (This command can make 3 directories simultaneously)
+- cp item1 item2 (Copies item1 to the file or directory of item2)
+- cp item1 item2 item3 container (Can copy multiple files into a single location)
+- cp Examples 
+  - cp file1 file2 - Copy file1 to file2. If file2 exists, it is overwritten with the contents of file1. If it does not exist, it is created 
+  - cp -i file1 file 2 - Same as above, difference being that the user is prompted before it is overwritten 
+  - cp file1 file2 dir1 - Copy file1 and file2 into dir1 
+  - cp -r dir1 dir2 - Copy the contents of dir1 into dir2 (-r is for recursive copying. It's needed when copying directories)
+- mv item1 item2 - move item 1 to item2 
+- mv examples 
+  - mv file1 file2 - Move file1 to file2. If file2 exists, it is overwritten with the contents of file1. If file2 does not exist, it is created. file1 ceases to exist 
+  - mv -i file1 file2 - Same as above, difference is that if file2 exists, the user is prompted before it is overwritten 
+  - mv file1 file2 dir1 - Move file1 n file2 into directory dir1 
+- rm item - remove (delete) files and directories 
+- ln - create links 
+- ln file link (creates a hard link)
+- ln -s item link (creates a symbolic link)
+- Hard Link 
+  - Original Unix way of creating links 
+  - By default every file has a single hard link that gives the file its name
+  - When we create a hard link, we create an additional directory entry for a file
+  - When a hard link is deleted, the link is removed but the contents of the file itself continue to exist until all links to the file are delted
+- Symbolic Link 
+  - Created to overcome the limitations of hard link
+  - Create a special type of file that contains a text pointer to the referenced file or directory 
+  - Operates very similarly to a windows shortcut 
+  - If you write something to the symbolic link, the referenced file is written to
+  - When you delete a symbolic link, the link is deleted, not the file itself 
+  - If the file is deleted, the link will continue to exist but will point to nothing 
+  - In this case, the link is said to be broken 
+- cp /etc/passwd . (Copies the contents of the file passwd from the directory etc to the current working directory which is denoted by the shorthand .)
+- mv dir1/fun dir2 (moves the file fun from dir1 to dir2)
+- When we create hard links, we are actually creating additional name parts that all refer to the same data part. The system assigns a chain of disk blocks to what is called an inode
+- Each hard link refers to a specific inode containing the file's contents 
+- ls -i (we can see the inode number, 2 files having the same inode number are essentially the same)
+
+  

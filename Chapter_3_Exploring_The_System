@@ -1,0 +1,43 @@
+Chapter-3 Exploring The System 
+
+- ls - List directory contents 
+- file - Determine file type 
+- less - view file contents 
+- We can list a specific directory too like (ls /usr)
+- ls ~ /usr (Listing directories of both the user's home directory and the /usr directory 
+- Adding -l changes the format to long format 
+- [command -options arguments] 
+- Long Format meaning of each field 
+  - -rw-r--r-- Access rights to a file (Lot of weird stuff going on in here
+  - 1 - File's number of hard links (Access points)
+  - root - Username of the file's owner 
+  - root - Name of the group that owns the file 
+  - 32059 - Size of the file in bytes 
+  - 2017-04-03 11:05 - Date and time of the file's last modification 
+  - oo-cd-cover.odf - Name of the file 
+- less command is a program to view text files (ASCII)
+- Important because many configuration files are stored in this format and being able to read them gives us an insight into their working 
+- Text is a simple one-to-one mapping of characters to numbers. It is very compact. Fifty characters of text translates to fifty bytes of data 
+- Text only contains a simple mapping of characters to numbers 
+- G - Moves to the end of the text file 
+- g - Move to the beginning of the text file 
+- q - quit 
+- Some directories found on linux systems 
+  - / - The root directory where everything begins 
+  - /bin - Contains binaries that must be present for the system to boot and run 
+  - /boot - Contains the linux kernel, initial RAM disk image (dirvers needed at boot time), and the boot loader.
+  - /dev - Special directory that contains device nodes. Here is where the kernel maintains a list of all the devices it understands 
+  - /etc - This directory contains all the system-wide config files. Contains a collection of shell scripts that start each of the system services at boot time. Readable text
+  - /home - In normal configs, each user is given a directory in /home 
+  - /lib - Contains shared library files used by the core system programs. Similar to DLLs in windows 
+  - /proc - Virtual file system that contains peepholes into the kernel itself 
+  - /root - Home directory for the root account 
+  - /usr - Largest directory as it contains all the programs and support files used by regular users
+  - /usr/bin - Contains EXE programs installed by the linux distro. Contains 1000s of programs 
+  - /usr/lib - Shares libraries for the programs in the above waali directory 
+- Symbolic Links - It's a special kind of file which is referenced by several names. Helps in programs tat go through version control
+  - Foo - Foo_2.6 
+  - Foo - Foo_2.7 
+  For example Foo has multiple version changes. Generally the version number is also mentioned in the file name. But if we change it everytime and if Foo is a shared resource, we would have to change it's name everyhwere where the file is being used. Instead these versions have a symbolic link to Foo as mentioned above. The files search for Foo and get the latest version of the software they were looking for. 
+
+

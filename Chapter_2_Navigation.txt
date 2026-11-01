@@ -1,0 +1,24 @@
+Chapter-2 Navigation 
+
+- pwd - print name of current working directory 
+- cd - change directory 
+- ls - list directory contents 
+- The files are organized in a tree like pattern of directories which may contain other files and directories
+- The first directory is called the root directory 
+- Windows has a separate file system tree for each storage device, but unix like systems like linux always have a single file system tree, regardless of how many drives or storage devices are attached to the computer 
+- Storage devices are attached (or mounted) at various points on the tree
+- At any given time, we are inside a single directory, we can see the files above us (parent directory) and any subdirectories below us. Directory we are standing in is called the current working directory (accessed via pwd)
+- When we first log in to our system, our current working directory is set to our home directory. Each used account is give its own home directory and it's the only place they are allowed to the write files 
+- To change current directory, we type cd followed by the pathname of the desired working directory 
+- Two ways to specify pathnames 
+  - Absolute Pathnames 
+    - Begins with the root directory and follows the tree branch by branch until the the path to the desired directory or file is completed
+  - Relative Pathnames 
+    - cd .. Goes to the parent directory 
+    - cd ./bin Goes to bin. We can also type cd bin (The ./ is implied)
+- Files beginning with a period character are hidden. Not shown by ls until ls -a is prompted
+- Filenames and commands are case sensitive 
+- Do not embed spaces in filenames (Not recommended as linux will see this as 2 separate files which will create issues)
+- Linux does not use the concept of a file extension like other OSes 
+- 
+    

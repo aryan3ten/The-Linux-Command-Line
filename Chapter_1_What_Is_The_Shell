@@ -1,0 +1,15 @@
+Chapter-1 What Is The Shell 
+
+- Shell is a program that takes keyboard commands and passes them to the operating system to carry them out 
+- All linux distributions provide a shell program from the GNU project called the bash
+- We usually interact with the shell using a terminal emulator 
+- Prompt Format - username@machinename (vboxuser@Ubuntu-26)_current working directory_$
+- # instead of a $ indicates superuser privileges. Which means that either we are logged in as the root user or the selected terminal emulator provides admin privileges 
+- Up arrow shows the last 1,000 command's history 
+- ctrl+shift+v for copy and similar for pasting. Ctrl+c used to kill processes
+- date - current date & time 
+- cal - calendar of the month 
+- df - current amount of free space on disk drives 
+- free - displays the amount of free memory 
+- exit - To terminate a terminal session 
+

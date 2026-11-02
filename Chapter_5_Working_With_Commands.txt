@@ -1,0 +1,33 @@
+Chapter-5 Working With Commands 
+
+- A command can be:
+  - An exe program that are compiled binaries in C,C++ or scripting languages sch as perl, python, ruby, etc 
+  - A command built into the shell itself called shell builtins (For example cd command_
+  - A shell function - Miniature shell scripts incorporated into the environment
+  - An alias: commands that we can define ourselves built from other commands 
+- using type we can find out the nature of the command 
+- which used to determine the exact location of a given exe (not builtins or aliases for actual exe programs)
+- with the help command we can get the command's documentation (for shell builtins) [help cd]
+- apart from shell builtins, --help option helps to see the documentation of many executable programs [mkdir --help]
+- man - display's documentation for exe programs intended for command line called a manual or man page [man mkdir]
+- whatis program displays the name and a one line description of a man page matching a specified keyword 
+- Creating an alias command 
+  - we can type multiple commands separated by semicolons [cd /usr; ls; cd-]
+  - The command sequence changed the current working directory to /usr, list the directory and finally return to the original directory using cd-
+  - we can package this sequence into a command with naming of our choice 
+  - to first check if the name we are using is taken, we use the command type 
+  - type test - reveals that the name test is a shell bultin 
+  - type foo - reveals not found, so therefore we can use this name 
+  - alias foo='cd /usr; ls; cd -' [alias name='string']  (No whitespace allowed)
+  - unalias is used to remove the alias 
+  
+  
+  
+  
+
+
+
+
+
+
+

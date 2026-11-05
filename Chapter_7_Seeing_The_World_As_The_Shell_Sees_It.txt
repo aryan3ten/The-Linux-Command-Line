@@ -1,0 +1,12 @@
+Chapter-7 Seeing The World as The Shell Sees It 
+
+- echo (copies the argument onto the console)
+  - echo hello >> hello 
+- echo * (As * is a wild card character that represents all files in the working directory, it prints all the files in directory on the console) 
+- echo $((2+2)) -- 4 [Use the shell prompt as a calculator]
+- echo Number_{1..5} >> Number_1, Number_2, ..... Number_5
+- echo {Z..A} >> Prints the alphabet in reverse order 
+- echo {2007..2009}-{01..12} >> 2007_01, 2007_02.....,2007_12, 2008_01 and so on and so forth 
+- if we want to work with files with spaces b/w them (for eg two words.txt, the shell will treat them as 2 separate files. Instead we can put the file name into double quotes for this not to occur)
+
+NOTE: Dense chapter which need to be revisited once again 

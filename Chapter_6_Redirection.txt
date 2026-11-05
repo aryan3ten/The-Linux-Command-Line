@@ -1,0 +1,58 @@
+Chapter 6 
+
+- Programs such as ls actually send their results to a special file called standard output (stdout) and their status messages to another file called standard error (stderr)
+- BY default both standard output and error are linked to screen and not saved into a disk file 
+- Many programs take input from a facility called standard input (stdin) which is by default attached to the keyboard 
+- When we redirect output with the > redirection operator, the destination file is always rewritten from the beginning
+- > ls-output.txt (We can truncate an existing file or create a new,empty file 
+- ls -l/bin/usr > ls-output.txt [Error thrown because this directory does not exist and the existing file is truncated]
+- ls -l/usr/bin >> ls-output.txt [Content is appended to the file instead of rewriting the file. If the file does not already exist, it is created just as though the > operator had been used 
+- To redirect standard error, we must refer to its file descriptor. The shell references them internally as file descriptors 0, 1 and 2
+  - Standard Input - 0
+  - Standard Output - 1
+  - Standard Error - 2
+- Therefore, ls-l /bin/usr 2> ls-error.txt makes a file that contains the error message 
+- There are cases wherein we want to capture all of the output of a command to a single file, to do this we must redirect both standard output and standard error at the same time 
+- ls -l /bin/usr > ls-output.txt 2>&1 [First we redirect standard output to the file ls-output.txt and then we redirect file descriptor 2 (standard error) to the file descriptor 1 (standard output) using the notation 2>&1
+- ls -l /bin/usr 2> /dev/null (The system provides a way to discard output by redirecting to a special file called /dev/null. It is referred to as a bit bucket which accepts input and does nothing with it 
+- cat filename [Reads one or more files and copies them to standard output] 
+- cat is used to display short text files and can also be used to merge files together
+- Suppose we have downloaded a large file that has been split into multiple parts [multimedia files are often split this way] and we want to join them back together
+- If cat is not given any arguments, it reads from standard input and since standard input is by default attached to the keyboard, it is waiting for us to type something
+- In the absence of file arguments, cat copies standard input to standard output, so we see our line of text repeated 
+- cat > lazy_dog.txt and in the next line we can write our text. The text will be copied onto the file lazy_dog.txt
+- cat < lazy_dog.txt [we changed the source of standard input from the keyboard to the file lazy_dog.txt. This shows that we can change to source from of standard input from the keybaord to the file lazy_dog.txt 
+- The capability of commands to read data from standard input and send to standard output is utilized by shell feature called pipelines using the pipe operator ( | )
+- command 1 | command 2 
+- Using |, the standard output of one command can be piped into the standard input of another 
+- Redirection operator (>) connects a command with a file while the pipeline operator (|) connects the output of one command with the input of the other  
+- Use redirection operator carefully as it creates or overwrites files 
+- uniq keyboard is used to remove duplicates from a created list 
+- ls /bin /usr/bin | sort | uniq | less [ A list of files in /bin & /usr/bin is sorted, duplicates removed and are then viewed in a doc viewer]
+- wc - gives word count, number of lines, and bytes contained in files
+- grep is a powerful program used to find text patterns within files [grep pattern filename]
+- When grep encounters a "pattern" in the file and prints out the lines containing it 
+- ls /bin /usr/bin | sort | uniq | grep zip [List all files with zip word listed] 
+  - -i causes grep to ignore case when performing the search (normally they are case sensitive)
+  - -v tells grep to print only those lines that do not match the pattern 
+- head command prints first 10 lines of a file and the tail command prints last 10 commands of text (can be customized with -n option)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
